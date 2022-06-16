@@ -4,13 +4,16 @@ import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
   final EnvironmentFlavors environment;
-  const MyApp({Key? key, required this.environment}) : super(key: key);
+  final String version;
+  const MyApp({Key? key, required this.environment, required this.version})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: FlavorBanner(
         child: Scaffold(
+          appBar: AppBar(title: Text(version)),
           body: Container(),
         ),
       ),
